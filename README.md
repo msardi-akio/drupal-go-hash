@@ -61,7 +61,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 
 ```bash
 # Include the project
-$go get github.com/msardi-meg/drupal-go-hash
+$ go get github.com/msardi-meg/drupal-go-hash
 
 ```
 
@@ -70,7 +70,7 @@ $go get github.com/msardi-meg/drupal-go-hash
 This project is under the GNU General Public License version 3. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/msardi-meg" target="_blank">{{YOUR_NAME}}</a>
+Made with :heart: by <a href="https://github.com/msardi-meg" target="_blank">Manuel Sardi</a>
 
 &#xa0;
 
