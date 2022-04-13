@@ -15,7 +15,7 @@
 
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/msardi-meg/drupal-go-hash?color=56BEB8">
 
-  [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+  <img alt="License" src="https://img.shields.io/badge/License-GPLv3-blue.svg">
 
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/msardi-meg/drupal-go-hash?color=56BEB8" /> -->
 
