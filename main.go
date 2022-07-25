@@ -40,7 +40,8 @@ func CheckPassword(dbHash string, pass string) bool {
 		hash = password_crypt("md5", pass, storedHash)
 
 	default:
-		return false
+		simpleMd5 := md5.Sum([]byte(pass))
+		hash = hex.EncodeToString(simpleMd5[:])
 	}
 	return (len(hash) > 0 && storedHash == hash)
 }
