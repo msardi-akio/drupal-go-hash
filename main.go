@@ -47,7 +47,7 @@ func CheckPassword(dbHash string, pass string) bool {
 	return (len(hash) > 0 && storedHash == hash)
 }
 
-func HashPassword(pwd string) string {
+func UserHashPassword(pwd string) string {
 	return password_crypt("sha512", pwd, password_generate_salt(7))
 }
 
