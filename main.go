@@ -3,6 +3,7 @@ package drupalGoHash
 import (
 	"bytes"
 	"crypto/md5"
+	"crypto/rand"
 	"crypto/sha512"
 
 	"encoding/hex"
@@ -44,6 +45,19 @@ func CheckPassword(dbHash string, pass string) bool {
 		hash = hex.EncodeToString(simpleMd5[:])
 	}
 	return (len(hash) > 0 && storedHash == hash)
+}
+
+func HashPassword(pwd string) string {
+	return password_crypt("sha512", pwd, password_generate_salt(7))
+}
+
+func password_generate_salt(countLog int) string {
+	output := "$S$"
+	output += string(password_itoa64()[countLog])
+	token := make([]byte, 7)
+	rand.Read(token)
+	output += passwordBase64Encode(token)
+	return output
 }
 
 func password_crypt(algo string, password string, setting string) string {
@@ -134,10 +148,10 @@ func passwordBase64Encode(input []byte) string {
 }
 
 func password_get_count_log2(setting string) int {
-	itoa64 := password_itoa64()
+	itoa64 := passwordItoA64
 	return strings.Index(itoa64, string(setting[3]))
 }
 
-func password_itoa64() string {
-	return "./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+func password_itoa64() []byte {
+	return []byte("./0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
 }
