@@ -31,7 +31,7 @@ func CheckPassword(dbHash string, pass string) bool {
 	var hash string
 	switch hashType {
 	case "$S$":
-		// println("Hash is sha512")
+		// println("Hash is sha512") jeje
 		hash = password_crypt("sha512", pass, storedHash)
 
 	case "$H$":
